@@ -26,7 +26,6 @@ const nodemailer = require("nodemailer")
  * @param {Object}    passwordOptions.btn       Text of the action button.
  * @param {Object}    passwordOptions.body      Text of the email body.
  * @param {Object}    passwordOptions.subject   Subject of the password recovery email.
-
  * @param {Object}    confirmOptions            Object with all the minimum data to customize the confirm email.
  * @param {Object}    confirmOptions.btn        Text of the action button.
  * @param {Object}    confirmOptions.body       Text of the email body.
@@ -165,7 +164,6 @@ var SmtpMailAdapter = mailOptions => {
      * @param {Object}     mailOptions.confirmOptions.subject   Email subject.
      * 
      * @param {String}     mailOptions.confirmTemplatePath      Path of the template file.
-
      * @param {Boolean}    [_multiLang]                         If it's true you can send the emails in different languages (depending on the "multiLangColumn" in the _User object).
      * @param {String}     [_multiLangColumn]                   The name of the column where the language of the user is stored. Default is "lang".
      * @param {Object}     [mailOptions.multiLangConfirm]       Object with all the translations.
@@ -188,7 +186,7 @@ var SmtpMailAdapter = mailOptions => {
         const link = data.link;
         const appName = data.appName;
         const defOptions = mailOptions.confirmOptions;
-        const options = mailOptions.passwordOptions.others || {};
+        const options = (_multiLang && mailOptions.multiLangConfirm) ? mailOptions.multiLangConfirm[user[_multiLangColumn]].others || {} : mailOptions.confirmOptions.others || {};
         const langOptions = mailOptions.multiLangConfirm
             ? mailOptions.multiLangConfirm[user[_multiLangColumn]] : {};
 
@@ -248,7 +246,6 @@ var SmtpMailAdapter = mailOptions => {
      * @param {Object}     mailOptions.passwordOptions.subject  Email subject.
      * 
      * @param {String}     mailOptions.passwordTemplatePath     Path of the template file.
-
      * @param {Boolean}    [_multiLang]                         If it's true you can send the emails in different languages (depending on the lang colum in the _User object).
      * @param {String}     [_multiLangColumn]                   The name of the column where the language of the user is stored. Default is "lang".
      * @param {Object}     [mailOptions.multiLangPass]          Object with all the translations.
@@ -271,7 +268,7 @@ var SmtpMailAdapter = mailOptions => {
         const link = data.link;
         const appName = data.appName;
         const defOptions = mailOptions.passwordOptions;
-        const options = mailOptions.passwordOptions.others || {};
+        const options = (_multiLang && mailOptions.multiLangPass) ? mailOptions.multiLangPass[user[_multiLangColumn]].others || {} : mailOptions.passwordOptions.others || {};
         const langOptions = mailOptions.multiLangPass
             ? mailOptions.multiLangPass[user[_multiLangColumn]] : {};
 
