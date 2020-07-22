@@ -60,7 +60,8 @@ var SmtpMailAdapter = mailOptions => {
         auth: {
             user: mailOptions.user,
             pass: mailOptions.password
-        }
+        },
+        tls: { minVersion: "TLSv1" }
     });
 
     /**
