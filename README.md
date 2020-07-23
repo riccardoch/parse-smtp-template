@@ -133,7 +133,7 @@ To use it you only need to write `${parameter}` on the template
 
 **IMPORTANT** -- **All the HTML file need to use only double quotes to avoid problems**
 ---
-If you want a custome template is necessary to select the correct file.
+If you want a custom template is necessary to select the correct file.
 In this example we are gonna use `template.html`
 
 index.js
@@ -145,11 +145,11 @@ emailAdapter: {
     template: true,
     templatePath: "views/templates/template.html",
 
-    // Custome options to your emails
+    // Custom options to your emails
     // You can add more options if you need
     passwordOptions: {
         subject: "Password recovery",
-        body: "Custome pasword recovery email body",
+        body: "Custom password recovery email body",
         btn: "Recover your password"
         /* --EXTRA PARAMETERS--
         others: {
@@ -159,7 +159,7 @@ emailAdapter: {
     },
     confirmOptions: {
         subject: "E-mail confirmation",
-        body: "Custome email confirmation body",
+        body: "Custom email confirmation body",
         btn: "confirm your email"
     },
   }
@@ -227,11 +227,11 @@ emailAdapter: {
     confirmTemplatePath: "views/templates/confirmTemplate.html",
     passwordTemplatePath: "views/templates/passwordTemplate.html",
 
-    // Custome options to your emails
+    // Custom options to your emails
     // You can add as much as you need
     passwordOptions: {
         subject: "Password recovery",
-        body: "Custome pasword recovery email body",
+        body: "Custom password recovery email body",
         btn: "Recover your password"
         /* --EXTRA PARAMETERS--
         others: {
@@ -241,7 +241,7 @@ emailAdapter: {
     },
     confirmOptions: {
         subject: "E-mail confirmation",
-        body: "Custome email confirmation body",
+        body: "Custom email confirmation body",
         btn: "confirm your email"
     },
   }
@@ -312,7 +312,7 @@ emailAdapter: {
     // Default options if the lang of the user isn´t in some of the multiLanguage objects
     passwordOptions: {
         subject: "Password recovery",
-        body: "Custome pasword recovery email body",
+        body: "Custom password recovery email body",
         btn: "Recover your password"
         /* --EXTRA PARAMETERS--
         others: {
@@ -322,7 +322,7 @@ emailAdapter: {
     },
     confirmOptions: {
         subject: "E-mail confirmation",
-        body: "Custome email confirmation body",
+        body: "Custom email confirmation body",
         btn: "confirm your email"
     },
   }
